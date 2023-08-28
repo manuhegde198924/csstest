@@ -1,0 +1,613 @@
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.offerBar {
+    background-color: black;
+    text-align: center;
+    padding: 7px 2em 7px 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    letter-spacing: 2px;
+    text-size-adjust: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.25;
+}
+
+.offerBar .firstHalf {
+    color: white;
+}
+.offerBar .secondHalf {
+    color: #ff4a32;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.navBar {
+    background-color: white;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s linear, height 0.2s linear;
+}
+
+.navBar[stuck] {
+    height: 66px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 0px 10px rgb(41 44 61 / 34%);
+}
+
+.navBar .logo {
+    height: 45px;
+    width: 200px;
+    margin: 15px 21px;
+    image-rendering: -webkit-optimize-contrast;
+    transition: height, width 0.15s ease-in;
+}
+
+.navBar[stuck] .logo {
+    height: 36px;
+    width: 160px;
+    margin: 15px 21px;
+}
+
+.navBar[stuck] .navItems {
+    transition: transform 0.2s linear;
+    padding: 25px 85px;
+}
+
+.navItems {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 0px 55px;
+}
+
+.subnav {
+    padding: 29px 0px;
+}
+
+.navLink {
+    padding: 29px 0px;
+    color: black;
+    text-decoration: none;
+    margin: 0px 11px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navLink:hover {
+    color: #ff4a32;
+}
+.navBar .icons {
+    margin-left: auto;
+}
+
+.navBar .icons a {
+    text-decoration: none;
+    padding-right: 8px;
+}
+
+.navBar .icons svg {
+    height: 18px;
+    width: 18px;
+    fill: black;
+    transition: fill 0.2s ease-in-out;
+}
+
+.navBar .icons svg:hover {
+    fill: #ff4a32;
+}
+
+.subnav:hover .subnavContent {
+    display: flex;
+}
+
+.subnavContent {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+
+    background-color: white;
+    top: 75px;
+    width: 200px;
+    padding: 15px, 11px;
+    z-index: 1;
+}
+
+.subnavContent a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 15px;
+    margin: 0px 15px;
+    line-height: 1.5;
+    font-size: 14px;
+    text-transform: none;
+    float: left;
+    color: black;
+    text-decoration: none;
+}
+
+.subnavContent a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+.arrow {
+    font-size: 12px;
+    font-weight: lighter;
+    display: inline-block;
+    margin-left: 10px;
+    transform: scale(2.2, 1.1);
+    transition: transform 0.2s linear;
+}
+
+.subnav:hover .arrow {
+    transform: scale(2.2, 1.1) rotate(180deg) translateY(1.5px);
+}
+
+.splashPanel {
+    display: flex;
+    flex-direction: row;
+    height: 634px;
+    overflow: hidden;
+}
+
+.splashHalf {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+}
+
+.splashImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+.splashTextBox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splashTextBox.boosted {
+    background-color: rgba(255, 255, 255, 0.6);
+    top: calc(50% - 122px);
+    left: calc(50% - 175px);
+    height: 245.25px;
+    width: 350px;
+}
+
+.splashTextBox.evolve {
+    background-color: rgba(255, 255, 255, 0.44);
+    top: calc(50% - 126px);
+    left: calc(50% - 175px);
+    height: 253px;
+    width: 350px;
+}
+
+.splashLogo.boosted {
+    margin-top: 40px;
+    width: 203px;
+}
+
+.splashLogo.evolve {
+    margin-top: 40px;
+    width: 145px;
+}
+
+.splashText {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 23px 30px;
+    line-height: 1.27;
+    text-align: center;
+}
+
+.splashLinks {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.splashLink {
+    display: inline-block;
+    background-color: #373737;
+    color: white;
+    text-decoration: none;
+    height: 34px;
+    width: 139px;
+    margin: 0px 6px;
+    border-radius: 100px;
+    line-height: 1.5;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: background 0.2s ease-in-out;
+}
+
+.splashLink.orange {
+    background-color: #ff4a32;
+}
+
+.splashLink.orange:hover {
+    background-color: #606060;
+}
+
+.splashLink:hover {
+    background-color: #ff4a32;
+}
+
+.partnersBar {
+    background-color: black;
+    height: 83px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 170px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.evolvePromo {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.evolvePromo .header {
+    width: 679px;
+    height: 157px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section .header p {
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.evolvePromo .header div {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.125;
+    width: 396px;
+}
+
+.evolvePromo .content {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.evolvePromo .zoomImage {
+    width: 580px;
+    height: 644px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.evolvePromo .zoomImage img {
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+}
+
+.evolvePromo .zoomImage:hover img {
+    transform: scale(1.1);
+}
+
+.evolvePromo .text {
+    width: 40%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.evolvePromo .text div {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.125;
+    width: 396px;
+}
+
+.divider {
+    width: 60px;
+    height: 0px;
+    border-style: solid;
+    border-color: #cfcfcf;
+    border-width: 2px;
+    border-bottom: none;
+    margin: 0;
+}
+
+.topAlignedBanner,
+.centeredBanner,
+.videoSection,
+.sectionProducts,
+.featureList {
+    margin-top: 20px;
+}
+
+.boostedRevSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 50px;
+}
+
+.boostedRevSection .header {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.125;
+    width: 396px;
+}
+
+.boostedRevSection .text {
+    width: 40%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.boostedRevSection img {
+    margin-right: 20px;
+}
+
+.boostedRevSection .text .header {
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+}
+
+.boostedRevSection .text p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 30px;
+}
+
+.splashSection {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 30px;
+    left: calc(50% - 244px);
+    width: 488px;
+}
+
+.splashSection .h5 {
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 12px;
+    padding-top: 17px;
+    line-height: 1.125;
+}
+
+.splashSection .h1 {
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+    font-size: 45px;
+    padding-bottom: 12px;
+    letter-spacing: 1px;
+    line-height: 1.125;
+}
+
+.splashSection .p {
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.125;
+    padding-bottom: 24px;
+}
+
+.splashLink.wide {
+    width: 200px;
+}
+
+.splashLink.narrow {
+    width: 100px;
+    margin: 0;
+}
+.white {
+    color: white;
+}
+
+.centeredBanner .splashSection {
+    top: calc(50% - 150px);
+    height: 300px;
+}
+
+.videoSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoSection iframe {
+    margin: 5px 10px;
+}
+
+.sectionProducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionProducts .header {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.125;
+    height: auto;
+}
+
+.sectionProducts .productReel {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.sectionProducts .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.sectionProducts img {
+    width: 12vw;
+}
+
+.sectionProducts .name {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    color: red;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.sectionProducts .price {
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.featureList {
+    height: 353px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0px 20px;
+    margin: 10px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature img {
+    image-rendering: -webkit-optimize-contrast;
+    height: 85.5px;
+}
+
+.feature div {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.125;
+}
+
+.feature p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.bottomInfo {
+    height: 289px;
+    padding: 50px 100px 15px 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: #f7f7f7;
+}
+
+.bottomInfo .img,
+.bottomInfo .explore,
+.bottomInfo .about {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.bottomInfo div {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.bottomInfo p,
+.bottomInfo a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-decoration: none;
+}
+
+.bottomInfo a:hover {
+    color: #ff4a32;
+    transition: color 0.3s ease-in-out;
+}
+
+.bottomInfo .explore ul {
+    padding: 0;
+    list-style: none;
+    margin: 10px 0px;
+}
+.bottomInfo .explore li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+}
+
+.bottomInfo .about p {
+    margin: 0;
+}
+
+.footer {
+    height: 50px;
+    background-color: white;
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+}
